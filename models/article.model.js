@@ -17,9 +17,9 @@ const articleSchema = new mongoose.Schema({
       message: "Picture must be a valid URL or null"
     }
   },
-  author:{
+  source:{
     type: String,
-    required: [true, "Author is required"],
+    required: false,
     minlength: [3, "Author must be at least 3 characters long"],
     trim: true
   },
@@ -36,7 +36,7 @@ const articleSchema = new mongoose.Schema({
   },
   description: {
     type: String,
-    required: false,
+    required: true,
     minlength: [10, "Description must be at least 10 characters long if provided"],
     trim: true
   },
